@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: tc-pipeline-run-
+spec:
+  pipelineRef:
+    name: tc-pipeline
+  params:
+    - name: repo-url
+      value: https://github.com/ibm-developer-skills-network/zntwk-tax_calculator
+    - name: image-name
+      value: us.icr.io/${SN_ICR_NAMESPACE}/tax-calculator
+  workspaces:
+    - name: pipeline-workspace
+      emptyDir: {}
