@@ -12,6 +12,8 @@ spec:
       script: |
         #!/bin/bash
         set -e
+        # Check if the code is in a subfolder and move into it
+        if [ -d "zntwk-tax_calculator" ]; then cd zntwk-tax_calculator; fi
         echo "***** Environment *****"
         npm --version
         pwd
@@ -34,5 +36,7 @@ spec:
       script: |
         #!/bin/bash
         set -e
+        # Check if the code is in a subfolder and move into it
+        if [ -d "zntwk-tax_calculator" ]; then cd zntwk-tax_calculator; fi
         echo "***** Running jasminetests *****"
         npx jasmine
